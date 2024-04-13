@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="themeContainer">
+    <label for="colourProfile">Select Color Profile:</label>
+        <select id="colourProfile" onchange="changeColourProfile()">
+            <option value="profile1">Normal</option>
+            <option value="profile2">Beach</option>
+            <option value="profile3">Breeze</option>
+            <option value="profile4">Space</option>
+        </select>
+</div>
+
+<div id="app-container">
+    <div id="visualizer-container">
+        <div id="canvas-container">
+            <canvas id="canvas1"></canvas>
+        </div>
+        <div id="profile4-video-container" class="profile4-video-container">
+            <video class="profile4-video" autoplay muted loop>
+                <source src="space.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+        </div>
+        <div id="audio-controls">
+            <label for="fileUpload" class="custom-file-upload">
+                <i class="fas fa-cloud-upload-alt"></i> Choose Audio File
+            </label>
+            <input type="file" id="fileUpload" accept="audio/*" style="display: none;" />
+            <audio id="audio1" controls></audio>
+        </div>
+        
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        changeColorProfile();
+    });
+</script>
+
+
+<script src="script.js"></script>
+</body>
+</html>
